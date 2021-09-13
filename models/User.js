@@ -1,4 +1,4 @@
-const { Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connections');
 
@@ -35,7 +35,16 @@ User.init({
         }
     }
 },
-{
-    hooks: {}
-}
-)
+    {
+        hooks: {
+
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user',
+    }
+);
+
+module.exports = User;
