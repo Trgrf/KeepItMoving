@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connections");
+const Exercise = require("./exercise");
 
 // create a workout model
 class Workout extends Model {}
@@ -19,17 +20,17 @@ Workout.init({
     type: DataTypes.DATE,
     allowNull: false,
   },
-  sets: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  reps: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   session_length: {
     type: DataTypes.INTEGER,
     allowNull: false,
+  },
+  exercise_id: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: "exercise",
+      key: "id",
+      unique: false
+    }
   }
 },
 {
