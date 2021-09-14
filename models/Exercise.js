@@ -18,11 +18,15 @@ Exercise.init(
     },
     sets: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     reps: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+    },
+    time: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
   },
 
