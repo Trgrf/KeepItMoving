@@ -7,5 +7,5 @@ router.use("/exercise", exerciseRoutes);
 router.use("/user", userRoutes);
 router.use("/workout", workoutRoutes);
 
-module.export = router;
+module.exports = router;
 

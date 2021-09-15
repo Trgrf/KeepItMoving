@@ -24,18 +24,18 @@ Workout.init({
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  exercise_id: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "exercise",
-      key: "id",
-      unique: false
-    }
-  }
+  // exercise_id: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: "exercise",
+  //     key: "id",
+  //     unique: false
+  //   }
+  // }
 },
 {
     sequelize,
-    timestamp: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "workout"

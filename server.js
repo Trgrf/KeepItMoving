@@ -3,7 +3,7 @@ const path = require("path")
 const session = require("express-session");
 const routes = require("./routes");
 const sequelize = require("./config/connections");
-const auth = require("./utils/auth");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,7 +21,7 @@ const sess = {
 app.use(session(sess));
 
 app.use(express.json());
-app.use(express.urlencoded({ erxtended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 //turn routes on

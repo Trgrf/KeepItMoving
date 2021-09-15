@@ -1,60 +1,60 @@
 [
-    {
-        "name": "Shoulder press",
-        "set": 3,
-        "reps": 5
-    },
-    {
-        "name": "Shrugs",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "Bench press",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "pushup",
-        "set": 3,
-        "reps": 20
-    },
-    {
-        "name": "Curls",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "Dips",
-        "set": 3,
-        "reps": 20
-    },
-    {
-        "name": "Rows",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "Pull-ups",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "Squats",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "Leg Press",
-        "set": 3,
-        "reps": 10
-    },
-    {
-        "name": "running",
-        "time": 60        
-    },
-    {
-        "name": "cycling",
-        "time": 60        
-    }
+  {
+    "name": "Shoulder press",
+    "sets": 3,
+    "reps": 5
+  },
+  {
+    "name": "Shrugs",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "Bench press",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "pushup",
+    "sets": 3,
+    "reps": 20
+  },
+  {
+    "name": "Curls",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "Dips",
+    "sets": 3,
+    "reps": 20
+  },
+  {
+    "name": "Rows",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "Pull-ups",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "Squats",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "Leg Press",
+    "sets": 3,
+    "reps": 10
+  },
+  {
+    "name": "running",
+    "time": 60
+  },
+  {
+    "name": "cycling",
+    "time": 60
+  }
 ]
