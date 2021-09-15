@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//delete exercise
+//delete exercise from view
 router.delete("/:id", async (req, res) => {
   try {
     const exerciseData = await Exercise.destroy({
