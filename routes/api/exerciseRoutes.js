@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
   console.log("/api/exercise/:id");
   try {
     const exerciseData = await Exercise.findByPk(req.params.id, {
-      include: [{ model: Workout }],
+      include: [{ model: User, through: Workout, as: "exercise_user" }],
     });
 
     if (!exerciseData) {
