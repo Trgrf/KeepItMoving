@@ -28,6 +28,10 @@ Exercise.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    weight: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
 
   {

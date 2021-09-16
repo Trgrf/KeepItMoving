@@ -1,16 +1,19 @@
 [
   {
     "name": "Adam",
+    "weight": 190,
     "email": "adam@gmail.com",
     "password": "password"
   },
   {
     "name": "Christian",
+    "weight": 210,
     "email": "Christian@gmail.com",
     "password": "password"
   },
   {
     "name": "Jemel",
+    "weight": 180,
     "email": "Jemel@gmail.com",
     "password": "password"
   }
