@@ -2,17 +2,20 @@
   {
     "name": "Shoulder press",
     "sets": 3,
-    "reps": 5
+    "reps": 5,
+    "weight": 100
   },
   {
     "name": "Shrugs",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 55
   },
   {
     "name": "Bench press",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 195
   },
   {
     "name": "pushup",
@@ -22,7 +25,8 @@
   {
     "name": "Curls",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 50
   },
   {
     "name": "Dips",
@@ -32,7 +36,8 @@
   {
     "name": "Rows",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 155
   },
   {
     "name": "Pull-ups",
@@ -42,12 +47,14 @@
   {
     "name": "Squats",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 250
   },
   {
     "name": "Leg Press",
     "sets": 3,
-    "reps": 10
+    "reps": 10,
+    "weight": 400
   },
   {
     "name": "running",

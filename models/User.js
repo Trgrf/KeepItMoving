@@ -19,6 +19,10 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    weight: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -36,9 +40,6 @@ User.init({
     }
 },
     {
-        hooks: {
-
-        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
