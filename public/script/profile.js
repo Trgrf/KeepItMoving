@@ -21,3 +21,27 @@ const newFormHandler = async (event) => {
         }
     }
 };
+
+const delBtnHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/workout/${id}`, {
+            method: 'DELETE',
+          });
+
+          if (response.ok) {
+            document.location.replace('/profile');
+          } else {
+            alert('Failed to delete workout');
+          }
+    }
+};
+
+document
+  .querySelector('.new-workout-form')
+  .addEventListener('submit', newFormHandler);
+
+document
+  .querySelector('.workout-list')
+  .addEventListener('click', delButtonHandler);
