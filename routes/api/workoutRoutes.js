@@ -2,6 +2,32 @@ const router = require("express").Router();
 const { Workout } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+router.get("/", async (req, res) => {
+    console.log("/api/workout");
+    try {
+      const workOutData = await Workout.findAll();
+      res.status(200).json(workOutData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+  router.get("/:id", async (req, res) => {
+    console.log("/api/workout/:id");
+    try {
+      const workOutData = await Workout.findByPk(req.params.id);
+  
+      if (!workOutData) {
+        res.status(404).json({ message: "No workout found!" });
+        return;
+      }
+      res.status(200).json(workOutData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 router.post('/', withAuth, async (req, res) => {
     try {
         const newWorkout = await Workout.create({
