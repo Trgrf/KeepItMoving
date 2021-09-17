@@ -44,4 +44,4 @@ document
 
 document
   .querySelector('.exercise-list')
-  .addEventListener('click', delButtonHandler);
+  .addEventListener('click', delBtnHandler);
