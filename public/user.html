@@ -13,79 +13,82 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
     <title>Users</title>
   </head>
+  <header class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container text-center">
+      <h1 class="display-3">Workout Tracker</h1>
+      <h3 class="lead">Consistency is Key!!</h3>
+      <h2 id="today" class="lead">00:00:00</h2>
+    </div>
+  </header>
   <body>
-    <header class="jumbotron jumbotron-fluid custom-jumbotron">
-      <div class="container text-center">
-        <h1 class="display-3">Workout Tracker</h1>
-        <h3 class="lead">
-          Consistency is Key!!
-        </h3>
-        <h2 id="today" class="lead">00:00:00</h2>
-      </div>
-    </header>
     <main>
-        <div class="row">
-            <section class="col-12 col-md-4 col-lg-3">
-              <div class="card custom-card">
-                <h3 class="card-header">
-                  Choose your exercise
-                </h3>
-                <div class="card-body">
-                  <div class="card-text">
-                    Click the button below to open a form and provide information for the following:
-                  </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Exercise</li>
-                  <li class="list-group-item">Sets</li>
-                  <li class="list-group-item">Reps</li>
-                  <li class="list-group-item">Minutes</li>
-                  <li class="list-group-item">Distance</li>
-                </ul>
-                <div class="card-footer">
-                  <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">choose
-                    Exercise</button>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add to 
-                      Workout</button>
-                  </div>
+      <div class="row">
+        <section class="col-12 col-md-4 col-lg-2">
+          <div class="card custom-card">
+            <h3 class="card-header">Choose your exercise</h3>
+            <div class="card-body">
+              <div class="card-text">
+                Click the button below to open a form and provide information
+                for the following:
               </div>
-            </section>
-      
-            <section class="col-12 col-md-8 col-lg-5">
-                <div class="table-responsive">
-                  <table class="table table-bordered custom-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Exercises</th>
-                      </tr>
-                    </thead>
-                    <tbody id="project-display"></tbody>
-                  </table>
-                </div>
-              </section>
-        
-              <section class="col-12 col-md-8 col-lg-5">
-                <div class="table-responsive">
-                  <table class="table table-bordered custom-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Workouts</th>
-                      </tr>
-                    </thead>
-                    <tbody id="project-display"></tbody>
-                  </table>
-                </div>
-              </section>
-        
-        
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Exercise</li>
+              <li class="list-group-item">Sets</li>
+              <li class="list-group-item">Reps</li>
+              <li class="list-group-item">Minutes</li>
+              <li class="list-group-item">Distance</li>
+            </ul>
+            <div class="card-footer">
+              <button
+                class="btn btn-block custom-btn"
+                data-toggle="modal"
+                data-target="#project-modal"
+              >
+                choose Exercise
+              </button>
+            </div>
+            <div class="card-footer">
+              <button
+                class="btn btn-block custom-btn"
+                data-toggle="modal"
+                data-target="#project-modal"
+              >
+                Add to Workout
+              </button>
+            </div>
           </div>
+        </section>
 
+        <section class="col-12 col-md-8 col-lg-5">
+          <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Exercises</th>
+                </tr>
+              </thead>
+              <tbody id="project-display"></tbody>
+            </table>
+          </div>
+        </section>
 
+        <section class="col-12 col-md-8 col-lg-5">
+          <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Workouts</th>
+                </tr>
+              </thead>
+              <tbody id="project-display"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
