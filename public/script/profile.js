@@ -60,9 +60,9 @@ const delBtnHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-exercise-form')
+  .querySelector('#search-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.exercise-list')
+  .querySelector('.exercise-box')
   .addEventListener('click', delBtnHandler);
