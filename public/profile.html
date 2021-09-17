@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <title>Profile</title>
+  </head>
+  <header class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container text-center">
+      <h1 class="display-3">Workout Tracker</h1>
+      <h3 class="lead">Consistency is Key!!</h3>
+      <h2 id="today" class="lead">00:00:00</h2>
+    </div>
+  </header>
+  <body>
+    <main>
+      <div class="row">
+        <section class="col-12 col-md-4 col-lg-3">
+          <div class="card custom-card">
+            <h3 class="card-header">Choose your exercise</h3>
+            <div class="card-body">
+              <div class="card-text">
+                Click the button below to open a form and provide information
+                for the following:
+              </div>
+            </div>
+           <form id="search-form">
+             <div class="form-group">
+              <input id="exercise" class="form-control" type="text" placeholder="by Exercise">
+              <input id="amt-weight" class="form-control" type="text" placeholder="Amount of weight">
+              <input id="sets" class="form-control" type="text" placeholder="Sets">
+              <input id="reps" class="form-control" type="text" placeholder="Reps">
+              <input id="minutes" class="form-control" type="text" placeholder="Minutes">
+              <input id="distance" class="form-control" type="text" placeholder="Distance">
+             </div>
+           </form>
+            <div class="card-footer">
+              <button
+                class="btn exercise-btn btn-block custom-btn"
+                data-toggle="modal"
+                data-target="#project-modal"
+              >
+                Choose Exercise
+              </button>
+            </div>
+            <div class="card-footer">
+              <button
+                class="btn workout-btn btn-block custom-btn"
+                data-toggle="modal"
+                data-target="#project-modal"
+              >
+                Save Excerise
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-12 col-md-8 col-lg-7">
+          <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Exercises</th>
+                </tr>
+              </thead>
+              <tbody id="project-display"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- <section class="col-12 col-md-8 col-lg-5">
+          <div class="table-responsive">
+            <table class="table table-bordered custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Workouts</th>
+                </tr>
+              </thead>
+              <tbody id="project-display"></tbody>
+            </table>
+          </div>
+        </section> -->
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  </body>
+</html>
