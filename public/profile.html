@@ -14,7 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="../public/css/style.css" />
-    <title>Users</title>
+    <title>Profile</title>
   </head>
   <header class="jumbotron jumbotron-fluid custom-jumbotron">
     <div class="container text-center">
@@ -26,7 +26,7 @@
   <body>
     <main>
       <div class="row">
-        <section class="col-12 col-md-4 col-lg-2">
+        <section class="col-12 col-md-4 col-lg-3">
           <div class="card custom-card">
             <h3 class="card-header">Choose your exercise</h3>
             <div class="card-body">
@@ -35,20 +35,23 @@
                 for the following:
               </div>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item" id="exercise">Exercise</li>
-              <li class="list-group-item">Sets</li>
-              <li class="list-group-item">Reps</li>
-              <li class="list-group-item">Minutes</li>
-              <li class="list-group-item">Distance</li>
-            </ul>
+           <form id="search-form">
+             <div class="form-group">
+              <input id="exercise" class="form-control" type="text" placeholder="by Exercise">
+              <input id="amt-weight" class="form-control" type="text" placeholder="Amount of weight">
+              <input id="sets" class="form-control" type="text" placeholder="Sets">
+              <input id="reps" class="form-control" type="text" placeholder="Reps">
+              <input id="minutes" class="form-control" type="text" placeholder="Minutes">
+              <input id="distance" class="form-control" type="text" placeholder="Distance">
+             </div>
+           </form>
             <div class="card-footer">
               <button
                 class="btn exercise-btn btn-block custom-btn"
                 data-toggle="modal"
                 data-target="#project-modal"
               >
-                choose Exercise
+                Choose Exercise
               </button>
             </div>
             <div class="card-footer">
@@ -57,13 +60,13 @@
                 data-toggle="modal"
                 data-target="#project-modal"
               >
-                Add to Workout
+                Save Excerise
               </button>
             </div>
           </div>
         </section>
 
-        <section class="col-12 col-md-8 col-lg-5">
+        <section class="col-12 col-md-8 col-lg-7">
           <div class="table-responsive">
             <table class="table table-bordered custom-table">
               <thead>
@@ -76,7 +79,7 @@
           </div>
         </section>
 
-        <section class="col-12 col-md-8 col-lg-5">
+        <!-- <section class="col-12 col-md-8 col-lg-5">
           <div class="table-responsive">
             <table class="table table-bordered custom-table">
               <thead>
@@ -87,7 +90,7 @@
               <tbody id="project-display"></tbody>
             </table>
           </div>
-        </section>
+        </section> -->
       </div>
     </main>
 
