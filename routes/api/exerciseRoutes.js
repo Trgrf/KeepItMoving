@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Exercise, Workout, User } = require("../../models");
+const { Exercise, User } = require("../../models");
 
 // get all exercises
 router.get("/", async (req, res) => {
@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
   console.log("/api/exercise/:id");
   try {
     const exerciseData = await Exercise.findByPk(req.params.id, {
-      include: [{ model: User, through: Workout, as: "exercise_user" }],
+      include: [{ model: User}],
     });
 
     if (!exerciseData) {
