@@ -1,14 +1,14 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#workout-name').value.trim();
-    const date = document.querySelector('#date').value.trim();
-    const length = document.querySelector('#session-length').value.trim();
+    const name = document.querySelector('#exercise').value.trim();
+    const sets = document.querySelector('#sets').value.trim();
+    const reps = document.querySelector('#reps').value.trim();
 
     if (name && date && length) {
-        const response = await fetch('/api/workout', {
+        const response = await fetch('/api/exercise', {
             method: 'POST',
-            body: JSON.stringify({ name, date, length }),
+            body: JSON.stringify({ name, sets, reps }),
             headers: {
                 'Content-Type': 'applicaion/json',
             },
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/profile');
         } else {
-            alert('Failed to create Workout');
+            alert('Failed to create exercise');
         }
     }
 };
@@ -26,22 +26,22 @@ const delBtnHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/workout/${id}`, {
+        const response = await fetch(`/api/exercise/${id}`, {
             method: 'DELETE',
           });
 
           if (response.ok) {
             document.location.replace('/profile');
           } else {
-            alert('Failed to delete workout');
+            alert('Failed to delete exercise');
           }
     }
 };
 
 document
-  .querySelector('.new-workout-form')
+  .querySelector('.new-exercise-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.workout-list')
+  .querySelector('.exercise-list')
   .addEventListener('click', delButtonHandler);
