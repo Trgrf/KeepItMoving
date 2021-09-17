@@ -13,3 +13,7 @@ body {
     border: 1px solid;
     background-color: #1bbc9b;
 }
+.exercise-box {
+    opacity: 0.6;
+    color: black;
+}
