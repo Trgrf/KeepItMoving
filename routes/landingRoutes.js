@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const { User, Workout, Exercise } = require("../models");
+const { User, Exercise } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const workoutData = await Workout.findAll({
+    const exerciseData = await Exercise.findAll({
       include: [
         {
           model: User,
@@ -12,10 +12,10 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+    const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
 
     res.render("landingpage", {
-      workouts,
+      exercises,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -23,9 +23,9 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/workout/:id", async (req, res) => {
+router.get("/exercise/:id", async (req, res) => {
   try {
-    const workoutData = await Workout.findByPk(req.params.id, {
+    const exerciseData = await Exercise.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -33,10 +33,10 @@ router.get("/workout/:id", async (req, res) => {
         },
       ],
     });
-    const workout = workoutData.get({ plain: true });
+    const exercise = exerciseData.get({ plain: true });
 
-    res.render("workout", {
-      ...workout,
+    res.render("exercise", {
+      ...exercise,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -47,7 +47,7 @@ router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPK(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Workout }],
+      include: [{ model: Exercise }],
     });
 
     const user = userData.get({ plain: true });
