@@ -7,6 +7,16 @@ const newFormHandler = async (event) => {
   const reps = document.querySelector('#reps').value.trim();
   const minutes = document.querySelector('#minutes').value.trim();
   const distance = document.querySelector('#distance').value.trim();
+  const todayEl = document.querySelector("#today");
+
+
+
+   // set date and time in header
+  //  function displayDayTime() {
+  //    const dayAndTimeEL = moment().format("MMM DD, YYYY [at] hh:mm:ss a ");
+  //    todayEl.innerText(dayAndTimeEL);
+  //  }
+  //  setInterval(displayDayTime, 1000);
 
   if (name) {
     const response = await fetch('/api/exercise', {
