@@ -8,7 +8,12 @@ const exerciseSeedData = require("./exerciseData.json");
 const fitnessDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const user = await User.bulkCreate(userSeedData);
+  const user = await User.bulkCreate(userSeedData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
+
 
   const exercise = await Exercise.bulkCreate(exerciseSeedData);
 
