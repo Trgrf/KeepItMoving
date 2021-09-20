@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const path = require("path");
 const { User, Exercise } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -44,19 +45,19 @@ router.get("/exercise/:id", async (req, res) => {
   }
 });
 router.get("/profile", withAuth, async (req, res) => {
+  console.log('GET /profile')
   try {
-    const userData = await User.findByPK(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Exercise }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render("profile", {
-      ...user,
-      logged_in: true,
-    });
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+    
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -66,7 +67,7 @@ router.get("/login", (req, res) => {
     res.redirect("/profile");
     return;
   }
-  res.render("login");
+  res.sendFile(path.join(__dirname, "../public/profile.html"));
 });
 
 module.exports = router;

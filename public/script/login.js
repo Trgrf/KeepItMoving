@@ -15,6 +15,8 @@ const loginFormHandler = async (event) => {
             document.location.replace('/profile');
         } else {
             alert(response.statusText);
+            const errMessage = await response.json();
+            alert(errMessage.message);
         }
     }
 };

@@ -7,6 +7,7 @@ const newFormHandler = async (event) => {
   const reps = document.querySelector('#reps').value.trim();
   const minutes = document.querySelector('#minutes').value.trim();
   const distance = document.querySelector('#distance').value.trim();
+  const displayEl = document.getElementById('project-display');
   const todayEl = document.querySelector("#today");
 
 
@@ -25,10 +26,10 @@ const newFormHandler = async (event) => {
         'Content-Type': 'applicaion/json',
       },
     });
-    const json = await result.json();
+    const json = await response.json();
     
     if (response.ok) {
-      document.location.replace('/profile');
+      displayEl.textContent = json;
     } else {
       alert('Failed to find exercise');
     }
@@ -37,6 +38,7 @@ const newFormHandler = async (event) => {
 
 
 if (name && weight && sets && reps && minutes) {
+  console.log('POST /api/exercise');
   const response = await fetch('/api/exercise', {
     method: 'POST',
     body: JSON.stringify({ name, weight, sets, reps, minutes, distance }),
@@ -46,7 +48,7 @@ if (name && weight && sets && reps && minutes) {
   });
 
   if (response.ok) {
-    document.location.replace('/profile');
+    displayEl.textContent = `Name: ${name}, Weight: ${weight}, Sets: ${sets}, Reps: ${reps}, Minutes: ${minutes}`;
   } else {
     alert('Failed to create exercise');
   }
@@ -70,8 +72,12 @@ const delBtnHandler = async (event) => {
 };
 
 document
-  .querySelector('#search-form')
-  .addEventListener('submit', newFormHandler);
+  .querySelector('.exercise-btn')
+  .addEventListener('click', newFormHandler);
+
+document
+  .querySelector('.workout-btn')
+  .addEventListener('click', newFormHandler);
 
 document
   .querySelector('.exercise-box')
