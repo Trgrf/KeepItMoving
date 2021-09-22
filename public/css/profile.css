@@ -20,3 +20,8 @@ body {
     opacity: 0.6;
     color: black;
 }
+.delete-btn {
+    background-color: red;
+    color: black;
+
+}
