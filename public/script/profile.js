@@ -30,9 +30,12 @@ const newFormHandler = async (event) => {
     
     if (response.ok) {
       console.log(json);
-      displayEl.textContent = json;
+      // displayEl.textContent = json;
+    
       for (let i = 0; i < json.length; i++) {
-        
+        const nameEl = document.createElement("li");
+        nameEl.textContent = json[i].name
+        displayEl.appendChild(nameEl);
       }
     } else {
       alert('Failed to find exercise');
