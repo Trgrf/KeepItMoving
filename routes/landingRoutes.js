@@ -47,12 +47,10 @@ router.get("/exercise/:id", async (req, res) => {
 router.get("/profile", withAuth, async (req, res) => {
   console.log('GET /profile')
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.params.user_id, {
       attributes: { exclude: ["password"] },
       include: [{ model: Exercise }],
     });
-
-    const user = userData.get({ plain: true });
 
     res.sendFile(path.join(__dirname, "../public/profile.html"));
     
