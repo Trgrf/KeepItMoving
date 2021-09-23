@@ -29,7 +29,11 @@ const newFormHandler = async (event) => {
     const json = await response.json();
     
     if (response.ok) {
+      console.log(json);
       displayEl.textContent = json;
+      for (let i = 0; i < json.length; i++) {
+        
+      }
     } else {
       alert('Failed to find exercise');
     }
@@ -48,6 +52,7 @@ if (name && weight && sets && reps && minutes) {
   });
 
   if (response.ok) {
+    console.log(name);
     displayEl.textContent = `Name: ${name}, Weight: ${weight}, Sets: ${sets}, Reps: ${reps}, Minutes: ${minutes}`;
   } else {
     alert('Failed to create exercise');
