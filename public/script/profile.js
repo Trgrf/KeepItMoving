@@ -35,11 +35,14 @@ const newFormHandler = async (event) => {
         if (name.toLowerCase().trim() === json[i].name.toLowerCase().trim()) {
           const nameEl = document.createElement("div");
           nameEl.textContent = json[i].name;
-          // const deleteBtn = document.createElement("button");
-          // deleteBtn.setAttribute("id", "delete-btn");
-          // deleteBtn.setAttribute("type", "button");
-          // nameEl.appendChild(deleteBtn);
+          const deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("id", "delete-btn");
+          deleteBtn.setAttribute("type", "button");
+          nameEl.appendChild(deleteBtn);
           displayEl.appendChild(nameEl);
+          deleteBtn.addEventListener("click", function (event) {
+            nameEl.textContext="";
+          } )
           return;
         }
       }
@@ -50,21 +53,23 @@ const newFormHandler = async (event) => {
   }
 }
 async function addExercise() {
+  console.log("hello")
   const name = document.querySelector("#exercise").value.trim();
-  const weight = document.querySelector("#amt-weight").value.trim();
-  const sets = document.querySelector("#sets").value.trim();
-  const reps = document.querySelector("#reps").value.trim();
-  const time = document.querySelector("#minutes").value.trim();
-  const distance = document.querySelector("#distance").value.trim();
-  const displayEl = document.getElementById("project-display");
+  const weight = +document.querySelector("#amt-weight").value.trim();
+  const sets = +document.querySelector("#sets").value.trim();
+  const reps = +document.querySelector("#reps").value.trim();
+  const time = +document.querySelector("#minutes").value.trim();
+  const distance = +document.querySelector("#distance").value.trim();
+  const displayEl = document.getElementById("exercise-display");
   const todayEl = document.querySelector("#today");
-  if (name && weight && sets && reps && time) {
+  console.log(name, weight, sets, reps, time, distance);
+  if ((name && weight && sets && reps) || (name && time && distance)) {
     console.log("POST /api/exercise");
     const response = await fetch("/api/exercise", {
       method: "POST",
-      body: JSON.stringify({ body: name, weight, sets, reps, time, distance }),
+      body: JSON.stringify({ name, weight, sets, reps, time, distance }),
       headers: {
-        "Content-Type": "applicaion/json",
+        "Content-Type": "application/json",
       },
     });
 

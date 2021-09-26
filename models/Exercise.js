@@ -32,6 +32,10 @@ Exercise.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+     distamce: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
 
   {
