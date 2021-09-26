@@ -35,9 +35,10 @@ const newFormHandler = async (event) => {
         if (name.toLowerCase().trim() === json[i].name.toLowerCase().trim()) {
           const nameEl = document.createElement("div");
           nameEl.textContent = json[i].name;
-          const deleteBtn = document.createElement("button");
-          deleteBtn.setAttribute("id", delete-btn);
-          deleteBtn.setAttribute("type", "button");
+          // const deleteBtn = document.createElement("button");
+          // deleteBtn.setAttribute("id", "delete-btn");
+          // deleteBtn.setAttribute("type", "button");
+          // nameEl.appendChild(deleteBtn);
           displayEl.appendChild(nameEl);
           return;
         }
@@ -48,7 +49,7 @@ const newFormHandler = async (event) => {
     return json;
   }
 }
-async function saveExercise() {
+async function addExercise() {
   const name = document.querySelector("#exercise").value.trim();
   const weight = document.querySelector("#amt-weight").value.trim();
   const sets = document.querySelector("#sets").value.trim();
@@ -61,7 +62,7 @@ async function saveExercise() {
     console.log("POST /api/exercise");
     const response = await fetch("/api/exercise", {
       method: "POST",
-      body: JSON.stringify({ name, weight, sets, reps, minutes, distance }),
+      body: JSON.stringify({ body: name, weight, sets, reps, minutes, distance }),
       headers: {
         "Content-Type": "applicaion/json",
       },
@@ -97,9 +98,9 @@ document
   .addEventListener("click", newFormHandler);
 
 document
-  .querySelector(".save-btn")
-  .addEventListener("click", saveExercise);
+  .querySelector(".add-exercise-btn")
+  .addEventListener("click", addExercise);
 
 document
-  .querySelector(".exercise-box")
+  .querySelector(".delete-btn")
   .addEventListener("click", delBtnHandler);
