@@ -38,6 +38,7 @@ const newFormHandler = async (event) => {
           const deleteBtn = document.createElement("button");
           deleteBtn.setAttribute("id", "delete-btn");
           deleteBtn.setAttribute("type", "button");
+          deleteBtn.textContent= "x";
           nameEl.appendChild(deleteBtn);
           displayEl.appendChild(nameEl);
           deleteBtn.addEventListener("click", function (event) {
@@ -75,7 +76,28 @@ async function addExercise() {
 
     if (response.ok) {
       console.log(name);
+      const data = await response.json()
+      console.log(data);
       displayEl.textContent = `Name: ${name}, Weight: ${weight}, Sets: ${sets}, Reps: ${reps}, Minutes: ${time}`;
+      const deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("id", "delete-btn");
+          deleteBtn.setAttribute("type", "button");
+          deleteBtn.textContent= "X";
+          displayEl.appendChild(deleteBtn)
+          deleteBtn.addEventListener("click", async function (event) {
+          displayEl.textContent= "";
+          const response = await fetch(`/api/exercise/${data.id}`, {
+            method: "DELETE",
+          });
+      
+          if (response.ok) {
+            document.location.replace("/profile");
+          } else {
+            alert("Failed to delete exercise");
+          }
+
+          } )
+
     } else {
       alert("Failed to create exercise");
     }
