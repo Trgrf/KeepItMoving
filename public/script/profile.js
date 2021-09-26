@@ -58,7 +58,7 @@ async function addExercise() {
   const distance = document.querySelector("#distance").value.trim();
   const displayEl = document.getElementById("project-display");
   const todayEl = document.querySelector("#today");
-  if (name && weight && sets && reps && minutes) {
+  if (name && weight && sets && reps && time) {
     console.log("POST /api/exercise");
     const response = await fetch("/api/exercise", {
       method: "POST",
