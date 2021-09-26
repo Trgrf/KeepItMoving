@@ -34,6 +34,7 @@ router.get("/:id", async (req, res) => {
 // add new exercise
 router.post("/", async (req, res) => {
   try {
+    console.log("createExercise");
     const exerciseData = await Exercise.create(req.body);
     res.status(200).json(exerciseData);
   } catch (err) {
