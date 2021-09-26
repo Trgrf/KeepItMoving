@@ -7,7 +7,7 @@ const newFormHandler = async (event) => {
   const reps = document.querySelector("#reps").value.trim();
   const minutes = document.querySelector("#minutes").value.trim();
   const distance = document.querySelector("#distance").value.trim();
-  const displayEl = document.getElementById("project-display");
+  const displayEl = document.getElementById("exercise-display");
   const todayEl = document.querySelector("#today");
 
   // set date and time in header
@@ -33,8 +33,11 @@ const newFormHandler = async (event) => {
 
       for (let i = 0; i < json.length; i++) {
         if (name.toLowerCase().trim() === json[i].name.toLowerCase().trim()) {
-          const nameEl = document.createElement("li");
+          const nameEl = document.createElement("div");
           nameEl.textContent = json[i].name;
+          const deleteBtn = document.createElement("button");
+          deleteBtn.setAttribute("id", delete-btn);
+          deleteBtn.setAttribute("type", "button");
           displayEl.appendChild(nameEl);
           return;
         }

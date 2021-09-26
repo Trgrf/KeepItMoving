@@ -19,9 +19,10 @@ body {
 .exercise-box {
     opacity: 0.6;
     color: black;
+    font-size: xx-large;
+    
 }
 .delete-btn {
     background-color: red;
     color: black;
-
 }
