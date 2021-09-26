@@ -54,7 +54,7 @@ async function addExercise() {
   const weight = document.querySelector("#amt-weight").value.trim();
   const sets = document.querySelector("#sets").value.trim();
   const reps = document.querySelector("#reps").value.trim();
-  const minutes = document.querySelector("#minutes").value.trim();
+  const time = document.querySelector("#minutes").value.trim();
   const distance = document.querySelector("#distance").value.trim();
   const displayEl = document.getElementById("project-display");
   const todayEl = document.querySelector("#today");
@@ -62,7 +62,7 @@ async function addExercise() {
     console.log("POST /api/exercise");
     const response = await fetch("/api/exercise", {
       method: "POST",
-      body: JSON.stringify({ body: name, weight, sets, reps, minutes, distance }),
+      body: JSON.stringify({ body: name, weight, sets, reps, time, distance }),
       headers: {
         "Content-Type": "applicaion/json",
       },
@@ -70,7 +70,7 @@ async function addExercise() {
 
     if (response.ok) {
       console.log(name);
-      displayEl.textContent = `Name: ${name}, Weight: ${weight}, Sets: ${sets}, Reps: ${reps}, Minutes: ${minutes}`;
+      displayEl.textContent = `Name: ${name}, Weight: ${weight}, Sets: ${sets}, Reps: ${reps}, Minutes: ${time}`;
     } else {
       alert("Failed to create exercise");
     }
